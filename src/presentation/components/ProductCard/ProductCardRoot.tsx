@@ -7,5 +7,5 @@ interface ProductCardRootProps {
 export const ProductCardRoot: React.FC<ProductCardRootProps> = ({
   children,
 }) => {
-  return <div className="flex w-96 flex-col gap-3 p-6 md:p-0">{children}</div>
+  return <div className="flex w-96 flex-col gap-3">{children}</div>
 }

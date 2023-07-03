@@ -2,12 +2,12 @@
 import React from 'react'
 
 import { Button } from '@/presentation/components/Button'
-import { BagSimple } from '@phosphor-icons/react'
+import { ShoppingCartSimple } from '@phosphor-icons/react'
 import { ProductCard } from '@/presentation/components/ProductCard'
 
 const Home: React.FC = () => {
   return (
-    <div className="flex h-screen w-full items-center justify-center gap-4">
+    <div className="grid h-screen w-full grid-cols-1 place-items-center gap-6 p-4 md:grid-cols-2 md:p-6 lg:grid-cols-3">
       {/* Exemplo de componente sem a aplicação do Composition Pattern */}
       {/* <div className="flex w-96 flex-col gap-3">
         <div className="flex w-full flex-col gap-2">
@@ -39,9 +39,9 @@ const Home: React.FC = () => {
           <ProductCard.Title title="SmartGlide Pro - Ferro de Passar a Vapor com Tecnologia Avançada" />
           <ProductCard.Price price={60} />
         </ProductCard.Content>
-        <Button.Root onClick={() => alert('Comprou: SmartGlide Pro')}>
-          <Button.Icon size={24} icon={BagSimple} />
-          <Button.Title title="Buy" />
+        <Button.Root>
+          <Button.Icon icon={ShoppingCartSimple} />
+          <Button.Title title="Add to cart" />
         </Button.Root>
       </ProductCard.Root>
     </div>
