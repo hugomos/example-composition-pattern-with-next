@@ -1,18 +1,49 @@
 'use client'
-
 import React from 'react'
+
 import { Button } from '@/presentation/components/Button'
 import { BagSimple } from '@phosphor-icons/react'
+import { ProductCard } from '@/presentation/components/ProductCard'
 
 const Home: React.FC = () => {
   return (
-    <div className="h-screen w-full">
-      <div className="w-14 p-12">
-        <Button.Root>
+    <div className="flex h-screen w-full items-center justify-center gap-4">
+      {/* Exemplo de componente sem a aplicação do Composition Pattern */}
+      {/* <div className="flex w-96 flex-col gap-3">
+        <div className="flex w-full flex-col gap-2">
+          <div className="overflow-hidden rounded shadow-sm shadow-zinc-400">
+            <img
+              src="https://source.unsplash.com/random/900x700/?product"
+              alt=""
+              className="object-cover"
+            />
+          </div>
+          <h3 className="font-semibold">
+            SmartGlide Pro - Ferro de Passar a Vapor com Tecnologia Avançada
+          </h3>
+          <span>
+            R$ <span className="font-bold text-green-600"> 60,00</span>
+          </span>
+        </div>
+        <button
+          className="flex w-full items-center justify-center gap-2 rounded bg-zinc-900 p-2 text-zinc-50 transition-colors hover:bg-zinc-800"
+          onClick={() => alert(`Comprou: SmartGlide Pro`)}
+        >
+          <BagSimple size={24} className="fill-zinc-50" />
+          <span>Buy</span>
+        </button>
+      </div> */}
+      <ProductCard.Root>
+        <ProductCard.Content>
+          <ProductCard.Image imageUrl="https://source.unsplash.com/random/900x700/?product" />
+          <ProductCard.Title title="SmartGlide Pro - Ferro de Passar a Vapor com Tecnologia Avançada" />
+          <ProductCard.Price price={60} />
+        </ProductCard.Content>
+        <Button.Root onClick={() => alert('Comprou: SmartGlide Pro')}>
           <Button.Icon size={24} icon={BagSimple} />
           <Button.Title title="Buy" />
         </Button.Root>
-      </div>
+      </ProductCard.Root>
     </div>
   )
 }
